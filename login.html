@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./style.css">
+  <style>
+    #homebtn{
+      position: absolute;
+      bottom: 6%;
+      left: 40%;
+    }
+    .btn{color: white;}
+    
+  </style>
+</head>
+<body>
+    <div id="login_container"class="modal">
+        <button class="btn--close-modal">&times;</button>
+        <h2 class="modal__header">
+          Open your account <br />
+          in just <span class="highlight">5 minutes</span>
+        </h2>
+        <form class="modal__form">
+          <label>First Name</label>
+          <input type="text" />
+          <label>Last Name</label>
+          <input type="text" />
+          <label>Email Address</label>
+          <input type="email" />
+          <label>Address</label>
+          <input type="address" />
+  
+          <label>Password</label>
+          <input type="password" />
+          <label>Telephone</label>
+          <input type="tel" />
+          <button class="btn">Next step &rarr;</button>
+        </form>
+      </div>
+      <div class="overlay hidden"></div>
+      <button type="button" class="btn btn-primary" id="homebtn"><a href="./index.html" style="text-decoration:none; color:white;">Return Home</a></button>
+
+    <script src="script.js"></script>
+     <!-- JQuery -->
+  <script src="js/jquery-3.7.1.js"></script>
+  <!-- Bootstrap -->
+  <script src="bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+  <!-- JS -->
+  <script src="js/main.js"></script>
+  <script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+
+
+    // Jquery
+    $(document).ready(function () {
+  const form = $(".modal__form");
+  const firstName = form.find('input[type="text"]:eq(0)');
+  const lastName = form.find('input[type="text"]:eq(1)');
+  const email = form.find('input[type="email"]');
+  const address = form.find('input[type="address"]');
+  const password = form.find('input[type="password"]');
+  const telephone = form.find('input[type="tel"]');
+  
+  form.on("submit", function (event) {
+    let isValid = true;
+    let errorMessage = "";
+
+    // Check if the first name is not empty
+    if (firstName.val().trim() === "") {
+        isValid = false;
+        errorMessage += "First name is required.\n";
+    }
+
+    // Check if the last name is not empty
+    if (lastName.val().trim() === "") {
+        isValid = false;
+        errorMessage += "Last name is required.\n";
+    }
+
+    // Check if the email address is valid
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (!emailPattern.test(email.val().trim())) {
+        isValid = false;
+        errorMessage += "Please enter a valid email address.\n";
+    }
+
+    // Check if the address is not empty
+    if (address.val().trim() === "") {
+        isValid = false;
+        errorMessage += "Address is required.\n";
+    }
+
+    // Check if the password is at least 8 characters long
+    if (password.val().trim().length < 8) {
+        isValid = false;
+        errorMessage += "Password must be at least 8 characters long.\n";
+    }
+
+    // Check if the telephone number is valid
+    const phonePattern = /^[0-9]{10}$/;
+    if (!phonePattern.test(telephone.val().trim())) {
+        isValid = false;
+        errorMessage += "Please enter a valid 10-digit phone number.\n";
+    }
+
+    // If not valid, prevent form submission and show an alert
+    if (!isValid) {
+        event.preventDefault(); // Prevent form submission
+        alert(errorMessage);
+    }
+  });
+});
+
+  </script>
+</body>
+</html>

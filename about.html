@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>About</title>
+    <style>
+      body {
+        font-family: 'Arial', sans-serif;
+        color: #333;
+        background-color: #f7f7f7;
+        line-height: 1.6;
+      }
+      /* Navbar styling */
+      .navbar {
+        padding: 20px 40px;
+        background-color: white;
+        border-bottom: 1px solid #eee;
+      }
+      .navbar-brand img {
+        height: 50px;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        color: #333;
+        margin-right: 20px;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #8E44AD;
+      }
+      .navbar-nav .nav-link.active {
+        font-weight: 700;
+        color: #8E44AD;
+      }
+      .btn-account {
+        background-color: #8E44AD;
+        color: white;
+        border-radius: 30px;
+        padding: 10px 20px;
+        font-weight: 500;
+        transition: background-color 0.3s ease;
+      }
+      .btn-account:hover {
+        background-color: #732d91;
+      }
+      /* Header section */
+      .section {
+        padding: 60px 0;
+      }
+      .section__header {
+        color: #8E44AD;
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+      .section__description {
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+      p {
+        color: #555;
+      }
+      /* Spacing */
+      .mt-4 {
+        margin-top: 2rem;
+      }
+      /* Media Queries */
+      @media (max-width: 768px) {
+        .navbar-nav .nav-link {
+          margin-right: 10px;
+        }
+        .section__header {
+          font-size: 2.2em;
+        }
+      }
+    </style>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Secondary CSS -->
+    <link rel="stylesheet" href="./secondary.css">
+</head>
+
+<body>
+  <header class="header"> 
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html">
+            <img src="./img/mb-logo.png" alt="Mommy's Bliss Logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Our Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Our Mission</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Testimonials</a>
+              </li>
+            </ul>
+          </div>
+          <a href="./login.html" class="btn btn-account">Open account</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="about">
+      <div class="container">
+        <div class="row" id="mainheader">
+          <div class="col-lg-6">
+            <h2 class="section__header" style="font-size:2.6em;">About Mommy's Bliss</h2>
+            <p>
+              At Mommy's Bliss, we believe in nurturing happiness and health from the very start. We are committed to offering the highest quality, organic products for both babies and moms to support their journey of growth and well-being.
+            </p>
+            <p>
+              Our baby vitamins and essentials are carefully crafted with 100% natural ingredients, free from artificial flavors or preservatives. Every product is designed to boost immunity, encourage healthy development, and give parents peace of mind.
+            </p>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-lg-4">
+            <h5 class="section__description">Our Mission</h5>
+            <p>We are dedicated to empowering moms and families by offering natural, organic solutions that help babies grow strong and healthy.</p>
+          </div>
+          <div class="col-lg-4">
+            <h5 class="section__description">Our Products</h5>
+            <p>All our products are made from plant-based ingredients, ensuring that every bottle, drop, or tablet contains only the purest elements nature has to offer.</p>
+          </div>
+          <div class="col-lg-4">
+            <h5 class="section__description">Our Promise</h5>
+            <p>We promise transparency, quality, and care in everything we create, helping families feel confident and supported every step of the way.</p>
+          </div>
+        </div>
+      </div>
+      <div id="outsidevid">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/OThgV669QCg?si=KOhAT7HqyjiLTlY2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/MNWZGlYeKNc?si=oFu2IFLA1uxoMV26" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+     
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center py-4">
+    <button type="button" class="btn btn-primary"><a href="./index.html" style="text-decoration:none; color:white;">Return Home</a></button>
+  </footer>
+
+  <!-- JQuery -->
+  <script src="js/jquery-3.7.1.js"></script>
+  <!-- Bootstrap -->
+  <script src="bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+  <!-- JS -->
+  <script src="js/main.js"></script>
+  <script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+nav{
+    border-radius: 5px;
+    background-color:transparent;
+    box-shadow: 0,0,2em,2em,black;
+}
+
+
+#mainheader{
+justify-content: center;
+  }
+
+  #outsidevid{
+        display: flex;
+        justify-content: center;
+      }
+    iframe{
+        margin: 2em  2em;
+    }
+
+body{
+    background:url("./img/background11.jpg") repeat ;
+}
