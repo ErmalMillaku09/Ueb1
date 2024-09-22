@@ -260,48 +260,54 @@ document.addEventListener("DOMContentLoaded", function () {
       let isValid = true;
       let errorMessage = "";
 
-      // Check if the first name is not empty
-      if (firstName.value.trim() === "") {
-          isValid = false;
-          errorMessage += "First name is required.\n";
-      }
+      try {
+          // Check if the first name is not empty
+          if (firstName.value.trim() === "") {
+              isValid = false;
+              errorMessage += "First name is required.\n";
+          }
 
-      // Check if the last name is not empty
-      if (lastName.value.trim() === "") {
-          isValid = false;
-          errorMessage += "Last name is required.\n";
-      }
+          // Check if the last name is not empty
+          if (lastName.value.trim() === "") {
+              isValid = false;
+              errorMessage += "Last name is required.\n";
+          }
 
-      // Check if the email address is valid
-      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-      if (!emailPattern.test(email.value.trim())) {
-          isValid = false;
-          errorMessage += "Please enter a valid email address.\n";
-      }
+          // Check if the email address is valid
+          const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+          if (!emailPattern.test(email.value.trim())) {
+              isValid = false;
+              errorMessage += "Please enter a valid email address.\n";
+          }
 
-      // Check if the address is not empty
-      if (address.value.trim() === "") {
-          isValid = false;
-          errorMessage += "Address is required.\n";
-      }
+          // Check if the address is not empty
+          if (address.value.trim() === "") {
+              isValid = false;
+              errorMessage += "Address is required.\n";
+          }
 
-      // Check if the password is at least 8 characters long
-      if (password.value.trim().length < 8) {
-          isValid = false;
-          errorMessage += "Password must be at least 8 characters long.\n";
-      }
+          // Check if the password is at least 8 characters long
+          if (password.value.trim().length < 8) {
+              isValid = false;
+              errorMessage += "Password must be at least 8 characters long.\n";
+          }
 
-      // Check if the telephone number is valid
-      const phonePattern = /^[0-9]{10}$/;
-      if (!phonePattern.test(telephone.value.trim())) {
-          isValid = false;
-          errorMessage += "Please enter a valid 10-digit phone number.\n";
-      }
+          // Check if the telephone number is valid
+          const phonePattern = /^[0-9]{10}$/;
+          if (!phonePattern.test(telephone.value.trim())) {
+              isValid = false;
+              errorMessage += "Please enter a valid 10-digit phone number.\n";
+          }
 
-      // If not valid, prevent form submission and show an alert
-      if (!isValid) {
+          // If not valid, prevent form submission and show an alert
+          if (!isValid) {
+              event.preventDefault(); // Prevent form submission
+              alert(errorMessage);
+          }
+      } catch (error) {
           event.preventDefault(); // Prevent form submission
-          alert(errorMessage);
+          alert("An unexpected error occurred: " + error.message);
+          console.error(error); // Log the error for debugging purposes
       }
   });
 });
